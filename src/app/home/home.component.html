@@ -1,0 +1,23 @@
+<div class="container my-5">
+     <form class="d-flex form">
+      <input  [(ngModel)]="tirm" class="form-control mr-2 w-25 ml-auto my-4 "  placeholder="Search" >
+    </form>
+    <!-- (keyup)="search(trim)" -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="w-25 du"></div>
+            <h2 class="py-3">Trending <br>Moives <br> to watch Now</h2>
+            <p class="py-2">most watched movies by days</p>
+            <div class="w-75 dd"></div>
+        </div>
+
+        <!-- | searchMoive : tirm -->
+        <div class="col-md-2" *ngFor="let oneMovie of homeDataMovies| searchMoive : tirm ">
+            <div class="moive">
+                <img [src]="imgPath+oneMovie.poster_path" alt="img" class="img-fluid">
+                <h3 class="text-center h6">{{oneMovie.title}}</h3>
+
+            </div>
+        </div>
+    </div>
+</div>
